@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Demo Retrofit</string>
+    <string name="title_activity_raw">raw</string>
+</resources>
