@@ -31,7 +31,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.MyVie
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_raw_layout,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.raw_layout,parent,false);
 
         return new MyViewHolder(view);
     }
@@ -39,7 +39,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.MyVie
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        holder.item.setText(news.get(position).getTitle());
+        holder.item.setText(news.get(position).getStatus());
        // Glide.with(context).load(news.get(position).getImage_path()).into(holder.image);
     }
 

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.List;
@@ -39,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 news = response.body();
                 adapter = new RecyclerAdapter(news, MainActivity.this);
                 recyclerView.setAdapter(adapter);
+                Toast.makeText(getApplicationContext(), response+"", Toast.LENGTH_LONG).show();
+                Log.d("Retrieve", response.body()+"");
             }
 
             @Override
             public void onFailure(Call<List<News>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Sorry couldn't fetch data", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), t+"", Toast.LENGTH_LONG).show();
             }
         });
     }
